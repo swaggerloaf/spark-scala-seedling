@@ -1,6 +1,10 @@
 # spark-scala-seedling
 A Spark Scala starter course
 
+some useful fs commands
+
+<code>%fs ls databricks-datasets</code>
+
 create a text file RDD from local file system
 
 <code>val distFile = sc.textFile("/databricks-datasets/samples/docs/README.md")</code>
