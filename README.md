@@ -1,13 +1,16 @@
 # spark-scala-seedling
 A Spark Scala starter course
 
-some useful fs commands
 
-<code>%fs ls databricks-datasets</code>
+Switch to HIVE 
+<code>
+spark.sql("CREATE TABLE IF NOT EXISTS src (key INT, value STRING) USING hive")
+spark.sql("CREATE TABLE IF NOT EXISTS employee(id INT, name STRING, age INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' USING hive")
+</code>
 
 create a text file RDD from local file system
 
-<code>val distFile = sc.textFile("/databricks-datasets/samples/docs/README.md")</code>
+<code>val distFile = sc.textFile("$SPARK_HOME/../samples/docs/README.md")</code>
 
 perform a map / reduce, return size of all lines to driver program
 
